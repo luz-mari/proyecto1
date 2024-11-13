@@ -1,26 +1,30 @@
 package com.caso.banco.controller;
 
 import com.caso.banco.controller.dto.Cliente;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.caso.banco.service.ClienteService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @RestController
 @RequestMapping("/clientes")
+@RequiredArgsConstructor
 public class ClienteController {
+
+    private final ClienteService service;
+
  @GetMapping
-    public List<Cliente> listadeCliente(){
-     Cliente cliente = new Cliente();
-     cliente.setId_cliente(1);
-     cliente.setDni("123456");
-     cliente.setApellido("Martinez");
-     cliente.setEmail("martin@hotmail.com");
-     cliente.setNombre("Maria");
-     List<Cliente> listado = new ArrayList<>();
-     listado.add(cliente);
-     return listado;
+ public List<Cliente> listadeCliente(){
+
+     return service.listadeCliente();
  }
+
+ @PostMapping
+    public Cliente registrar(@RequestBody Cliente a){
+
+     return service.registrar(a);
+ }
+
 }
