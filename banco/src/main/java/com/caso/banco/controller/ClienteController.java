@@ -1,6 +1,7 @@
 package com.caso.banco.controller;
 
 import com.caso.banco.controller.dto.Cliente;
+import com.caso.banco.controller.dto.Cuenta;
 import com.caso.banco.service.ClienteService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -26,5 +27,14 @@ public class ClienteController {
 
      return service.registrar(a);
  }
+
+    @PutMapping
+    public Cliente actualizar (@RequestBody Cliente b){
+        return service.registrar(b);
+
+    }
+
+    @GetMapping
+
 
 }

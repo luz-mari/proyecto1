@@ -32,4 +32,9 @@ public class ClientesServiceImpl implements ClienteService {
         System.out.println(a.getId_cliente());
         return a;
     }
+
+    @Override
+    public Cliente actualizar(Cliente b) {
+        return null;
+    }
 }

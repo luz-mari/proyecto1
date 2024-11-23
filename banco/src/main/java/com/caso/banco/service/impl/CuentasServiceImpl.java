@@ -31,4 +31,11 @@ public class CuentasServiceImpl implements CuentaService {
         return a;
 
     }
+
+    @Override
+    public Cuenta actualizar(Cuenta b) {
+
+        return b;
+
+    }
 }

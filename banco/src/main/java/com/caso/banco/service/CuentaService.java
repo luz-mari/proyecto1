@@ -8,4 +8,8 @@ import java.util.List;
 public interface CuentaService {
     List<Cuenta> listadoCuenta();
     Cuenta registrar (@RequestBody Cuenta a);
+    Cuenta actualizar (@RequestBody Cuenta b);
+
+
 }
+

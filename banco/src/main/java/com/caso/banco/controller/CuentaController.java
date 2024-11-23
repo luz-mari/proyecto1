@@ -27,5 +27,10 @@ public class CuentaController {
 
         return service.registrar(a);
     }
+    @PutMapping
+    public Cuenta actualizar (@RequestBody Cuenta b){
+        return service.registrar(b);
+
+    }
 
 }
